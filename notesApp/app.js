@@ -1,4 +1,3 @@
-import chalk from 'chalk';
 import yargs from 'yargs';
 import { hideBin } from 'yargs/helpers';
 import notes from './notes.js';
@@ -36,7 +35,6 @@ yargs(hideBin(process.argv))
         },
         handler: function (argv) {
             notes.addNote(argv.title, argv.body);
-            console.log(chalk.red.inverse(argv.title,'\n', argv.body));
         }
     })
     .command({                                                      //create list command
@@ -49,8 +47,8 @@ yargs(hideBin(process.argv))
     .command({                                                       //create read command
         command: 'read',
         describe: 'Read a note',
-        handler: function (arv) {
-            console.log('You are reading this note...');
+        handler: function (argv) {
+           notes.readNotes(argv.title);
         }
     })
     .command({                                                      //create edit command

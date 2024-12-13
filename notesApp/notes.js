@@ -1,27 +1,27 @@
 import fs from 'fs';
 import chalk from 'chalk';
 
-const getNotes = () => {
-    return 'Your notes...';
-}
 
 const addNote = (title, body) => {
     const notes = loadNotes();
 
-    //filters for duplicates
-    const duplicateNotes = notes.filter((note) => note.title === title);
+    //filters for duplicates but only the first one and returns it
+    const duplicateNote = notes.find((note) => note.title === title);
 
     //if there are no duplicates push the note to the array
-    if(duplicateNotes.length === 0) {
+    if(!duplicateNote) {
         notes.push({
             title: title,
             body: body,
         })
+    } else {
+        console.log(chalk.red('Cannot add duplicate note, try editing instead'));
+        return;
     }
 
     saveNote(notes)
 
-    console.log(chalk.blue.inverse('New note added'));
+    console.log(chalk.green('New note added'));
 }
 
 
@@ -44,9 +44,26 @@ const loadNotes = () => {
 }
 
 const listNotes = () => {
+    const notes = loadNotes();
+    let eachTitle = '';
 
+    for (const note of notes) {
+        eachTitle += note.title + '\n';
+    }
+
+    console.log(chalk.magenta('Your notes:' + '\n' + eachTitle));
 };
 
+const readNotes = (title) => {
+    let notes = loadNotes();
+    let foundNote = notes.find((note) => note.title === title);
+
+    if(foundNote) {
+        console.log(chalk.magenta(foundNote.title) + '\n' + foundNote.body);
+    } else {
+        console.log(chalk.red('No note found'));
+    }
+}
 
 const editNote = (userTitle, userBody) => {
     let notes = loadNotes();
@@ -85,9 +102,9 @@ const removeNote = (title) => {
 
 //es6 syntax
 export default {
-    getNotes,
     addNote,
     editNote,
     listNotes,
     removeNote,
+    readNotes,
 };
