@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>A Basic HTML5 Template</title>
+    <meta name="description" content="An elegant and modern HTML5 template for personal or professional projects.">
+    <meta name="author" content="Yonjou Victorin">
+
+    <!-- Open Graph Metadata (for social sharing) -->
+    <meta property="og:title" content="Yonjou's Project">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://yourwebsite.com">
+    <meta property="og:description"
+          content="Explore Yonjou Victorin's innovative project using modern web development techniques.">
+    <meta property="og:image" content="https://yourwebsite.com/preview-image.png">
+
+    <!-- Favicon and Touch Icons -->
+    <link rel="icon" href="/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+
+    <!-- Stylesheet -->
+    <link rel="stylesheet" href="/css/styles.css">  <!--  relative the web server root / public folder-->
+</head>
+
+<body>
+<!-- Main Content -->
+{{>header}}
+<p>{{message}}</p>
+{{>footer}}
+
+<!-- JavaScript -->
+<script src="js/scripts.js"></script>
+</body>
+</html>

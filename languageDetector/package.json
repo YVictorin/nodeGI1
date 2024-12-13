@@ -1,0 +1,16 @@
+{
+  "name": "lesson-1-(section-1---3)",
+  "version": "1.0.0",
+  "main": "Challenge1.js",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "languagedetect": "^2.0.0"
+  }
+}
