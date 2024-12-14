@@ -3,7 +3,6 @@ const path = require('path');
 const express = require('express'); //express returns a single function
 const hbs = require('hbs');
 const weather = require('./utils/weather');
-const geocode = require('./utils/geocode');
 require('dotenv').config();
 
 const PORT = process.env.PORT || 8080;
@@ -25,14 +24,14 @@ app.use(express.static(publicDirectoryPath));
 app.get('', (req, res) => {
     //response will send rendered hbs back to the requester/browser
     res.render('index', {
-        title: 'Weather App',           //this object is what creates the dynamic html document
+        title: 'RWA',           //this object is what creates the dynamic html document
         name: 'Yonjou Victorin'
     });
 })
 
 app.get('/about', (req, res) => {
     res.render('about', {
-        title: 'About Me',
+        title: 'About',
         name: 'Yonjou Victorin'
     });
 })
@@ -48,6 +47,8 @@ app.get('/help', (req, res) => {
 
 //app.com/weather
 app.get('/weather', (req, res) => {
+    const { _, units = 'f' } = req.query; // Default to 'f' if units not provided
+
     // Query String: an url that a person can send to the server
 
     if(!req.query.address) {                                    // info on the query string lives on the req object, it is also parsed by Express
@@ -60,20 +61,19 @@ app.get('/weather', (req, res) => {
     // if you use try to respond i.e. res.send, twice to a request you get an error message,
     // because HTTP requests can only have a single response go to the server and a single request that comes back
     // instead add a return like on line 49 or an else statement
-   weather(req.query.address, (error, data) => {
-       if (error) {
-           return res.send({
-               error: error
-           })
-       } else {
-           res.send({
-               forecast: data.forecast,
-               location: data.location,
-               address: req.query.address,
-           })
-       }
+    weather(req.query.address, (error, data) => {
+        if (error) {
+            return res.send({
+                error: error,
+            });
+        }
 
-   })
+        res.send({
+            forecast: data.forecast,
+            location: data.location,
+            address: req.query.address,
+        });
+    }, units);
 })
 
 

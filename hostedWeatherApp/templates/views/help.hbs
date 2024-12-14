@@ -5,7 +5,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>A Basic HTML5 Template</title>
+    <title>{{title}}</title>
     <meta name="description" content="An elegant and modern HTML5 template for personal or professional projects.">
     <meta name="author" content="Yonjou Victorin">
 
@@ -16,6 +16,13 @@
     <meta property="og:description"
           content="Explore Yonjou Victorin's innovative project using modern web development techniques.">
     <meta property="og:image" content="https://yourwebsite.com/preview-image.png">
+
+    <!-- Fonts-->
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Arimo:ital,wght@0,400..700;1,400..700&family=Bebas+Neue&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css">
 
     <!-- Favicon and Touch Icons -->
     <link rel="icon" href="/favicon.ico" type="image/x-icon">
@@ -29,10 +36,44 @@
 <body>
 <!-- Main Content -->
 {{>header}}
-<p>{{message}}</p>
+<section class="help-hero-section">
+    <div class="help-hero-content-container">
+        <p class="help-hero-msg">{{message}}</p>
+        <input type="text" placeholder="Search how-tos and more" class="help-hero-input">
+
+        <div class="top-search-wrapper">
+            <p>Top searches</p>
+            <div class="forms">Forms</div>
+            <div class="templates">Templates</div>
+            <div class="rules">Rules</div>
+            <div class="billing">Billing</div>
+            <div class="use">Usage</div>
+        </div>
+    </div>
+</section>
+
+<main>
+    <section class="help-main-section">
+        <p>New to Weather app? Start here.</p>
+
+        <div class="help-cards-container">
+                <div class="img-block-container img-laptop"></div>
+                <div class="img-block-container img-tablet"></div>
+                <div class="img-block-container img-tutorial"></div>
+        </div>
+
+        <div class="help-text-container">
+            <p class="img-block-text"> Navigating the weather app interface</p>
+            <p class="img-block-text"> Getting started with weather </p>
+            <p class="img-block-text"> Video tutorials </p>
+        </div>
+
+    </section>
+</main>
+
 {{>footer}}
 
 <!-- JavaScript -->
-<script src="js/scripts.js"></script>
+<script src="js/app.js"></script>
 </body>
 </html>
