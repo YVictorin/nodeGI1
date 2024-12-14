@@ -46,11 +46,11 @@ if(weatherForm) {
     })
 }
 
-// lottie.loadAnimation({
-//     container: document.getElementById('lottie-canvas'), // The DOM element (canvas) that will contain the animation
-//     renderer: 'svg',   // 'svg', 'canvas', or 'html'
-//     loop: true,
-//     autoplay: true,
-//     path: 'https://lottie.host/f657277b-386c-43eb-a1e5-86afebafea7e/BJClWNC0zo.json', // URL to the Lottie JSON file
-// });
+lottie.loadAnimation({
+    container: document.getElementById('lottie-canvas'), // The DOM element (canvas) that will contain the animation
+    renderer: 'svg',   // 'svg', 'canvas', or 'html'
+    loop: true,
+    autoplay: true,
+    path: 'https://lottie.host/f657277b-386c-43eb-a1e5-86afebafea7e/BJClWNC0zo.json', // URL to the Lottie JSON file
+});
 
