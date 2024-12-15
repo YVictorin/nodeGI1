@@ -370,6 +370,68 @@ footer {
 }
 
 
+/* 404 page styling*/
+.err-page-main {
+    height: 100%;
+    width: 100%;
+    display: grid;
+    place-content: center;
+}
+
+.err-number-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.25rem;
+}
+
+.err-number-wrapper span {
+    font-size: 3rem;
+    font-weight: 500;
+}
+
+.flipped-num {
+    transform: scaleX(-1);
+}
+
+.error-message {
+    text-align: center;
+    font-size: 1.5rem;
+    margin: 0.3rem 1rem;
+}
+
+.err-page-btn {
+    background-color: #101010;
+    padding: 1rem;
+    justify-self: center;
+    border-radius: 40px;
+    width: 10rem;
+}
+.not-found-msg {
+    font-size: 0.8rem;
+    margin-bottom: 2rem;
+    text-align: center;
+}
+
+.err-number-wrapper div {
+    background-color: red;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    position: relative;
+    transform: scale(0.7);
+}
+
+.err-number-wrapper div::before {
+    content: "!";
+    position: absolute;
+    left: 45%;
+    top: 30%;
+    transform: scale(2);
+    color: white;
+
+}
+
 /* Media Queries for Responsiveness */
 
 /* Tablet devices */

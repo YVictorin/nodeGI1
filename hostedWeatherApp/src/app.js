@@ -90,7 +90,7 @@ app.get('/help/*', (req, res) => {
 //must be last since express looks from top down for any matches and the wildcard character is technically a match and would stop looking afterward
 app.get('*', (req, res) => {
     res.render('404', {
-        errorMessage: 'Page Not Found',
+        errorMessage: "Oops! You're lost.",
         title: '404',
         name: 'Yonjou Victorin'
     });
