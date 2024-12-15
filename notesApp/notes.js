@@ -76,6 +76,7 @@ const editNote = (userTitle, userBody) => {
             console.log(chalk.green('Note edited'));
         }
 
+
 }
 
 
