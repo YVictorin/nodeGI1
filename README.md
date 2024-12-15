@@ -6,7 +6,7 @@ This is a Node.js application in which users can access current weather data bas
 
 ###
 
-### Uses the npm package languageDetector to find multiple strings language
+### Uses the npm package languageDetector to identify the language of multiple strings
 
 ![Chat Preview](./hostedWeatherApp/public/img/test.png)
 
@@ -24,8 +24,6 @@ This is a Node.js application in which users can access current weather data bas
 
 ## Setup
 Clone this repo to your desktop and run `npm install` to install all the dependencies.
-
-You might want to look into `config.json` to change the port you want to use and set up an SSL certificate.
 
 ---
 
