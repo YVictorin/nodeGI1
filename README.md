@@ -2,8 +2,7 @@ Node.JS Guided Inquiry
 ============
 [![GitHub Stars](https://img.shields.io/github/stars/IgorAntun/node-chat.svg)](https://github.com/IgorAntun/node-chat/stargazers) [![GitHub Issues](https://img.shields.io/github/issues/IgorAntun/node-chat.svg)](https://github.com/IgorAntun/node-chat/issues) [![Current Version](https://img.shields.io/badge/version-1.0.7-green.svg)](https://github.com/IgorAntun/node-chat) [![Live Demo](https://img.shields.io/badge/demo-online-green.svg)](https://igorantun.com/chat) [![Gitter](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/IgorAntun/node-chat?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge)
 
-This is a Node.js application in which users can access current weather data based on their location and manage personal notes through a command-line interface. The application is designed with a user-friendly Material Design interface, making it easy to navigate and use.
-
+This Node.js application offers three features: current weather data based on user location, a command-line interface for managing personal notes, and a user-friendly UI interface for easy navigation.
 ###
 
 ### Uses the npm package languageDetector to identify the language of multiple strings
@@ -23,20 +22,18 @@ This is a Node.js application in which users can access current weather data bas
 ---
 
 ## Setup
-Clone this repo to your desktop and run `npm install` to install all the dependencies.
+After you clone this repo to your desktop, go to the root directory of either the hostedWeatherApp, languageDetector, or notesApp respectively and run `npm install` to install their dependencies.
 
 ---
 
 ## Usage
-After you clone this repo to your desktop, go to the root directory of either hostedWeatherApp, languageDetector, or notesApp respectively and run `npm install` to install their dependencies.
-
-Once the dependencies are installed, you can run `npm start` to start the application. You will then be able to access it at `localhost:8080`.
+Once the dependencies are installed, you can run `npm start` to start the hostedWeatherApp application. You will then be able to access it at `localhost:8080`.
 
 
-### Weather Feature
+### Weather Forecast Application
 The application allows users to fetch weather information based on their location. Users can input their location and select units (Celsius, Fahrenheit, or Kelvin) to get the current weather conditions.
 
-### Note Management Feature
+### Note Management Application
 The application includes a note management system that allows users to:
 - Add notes with a title and body
 - Remove notes by title
@@ -55,21 +52,3 @@ This project is licensed under the terms of the **MIT** license.
 
 ---
 
-## Codebase Overview
-
-### Client-Side Code
-The client-side code handles user interactions and fetches weather data based on user input. Here is a brief overview of the key components:
-
-```javascript
-const weatherForm = document.querySelector('form');
-const search = document.querySelector('input');
-const messageOne = document.querySelector('#message-1');
-const messageTwo = document.querySelector('#message-2');
-const checkboxes = document.querySelectorAll('input[type="checkbox"]');
-
-const getLocationWeather = async (userLocation, userUnits = 'c') => {
-    try {
-        messageOne.textContent = 'Loading...';
-        messageTwo.textContent = '';
-        const response = await fetch(`/weather?address=${userLocation}&units=${userUnits}`);
-        const dataJson =
