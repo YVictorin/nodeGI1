@@ -21,9 +21,11 @@ const getWeather = (address, callback, userUnits = 'f') => {
                     //converting units back to C, F, and K respectively
                     if(userUnits === 'm') {
                         convertedUnits = 'C';
-                    } else if(userUnits === 'S') {
-                        convertedUnits = 'K';
                     } else {
+                        convertedUnits = 'K';
+                    }
+
+                    if(userUnits === 'f') {
                         convertedUnits = 'F';
                     }
 

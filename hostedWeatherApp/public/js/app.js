@@ -7,6 +7,19 @@ const messageTwo = document.querySelector('#message-2');
 
 const checkboxes = document.querySelectorAll('input[type="checkbox"]');
 
+// only one checkbox is checked at a time
+checkboxes.forEach((checkbox) => {
+    checkbox.addEventListener('change', () => {
+        if (checkbox.checked) {
+            checkboxes.forEach((otherCheckbox) => {
+                if (otherCheckbox !== checkbox) {
+                    otherCheckbox.checked = false;
+                }
+            });
+        }
+    });
+});
+
 
  const getLocationWeather = async (userLocation, userUnits = 'c') =>  {
     try {
